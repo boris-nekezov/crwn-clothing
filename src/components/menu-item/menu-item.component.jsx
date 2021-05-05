@@ -1,9 +1,11 @@
 import React from 'react';
-import './menu-item-styles.scss';
 import { withRouter } from 'react-router-dom';
 
+import './menu-item.styles.scss';
+
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
-	// * now you should click one some of the menu item and it should navigate to that page
+	// * now you should click one some of the menu item and
+	// * it should navigate to that page
 	<div
 		className={`${size} menu-item`}
 		onClick={() => history.push(`${match.url}${linkUrl}`)}
@@ -13,11 +15,10 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
 			style={{
 				backgroundImage: `url(${imageUrl})`,
 			}}
-		></div>
-
+		/>
 		<div className="content">
 			<h1 className="title">{title.toUpperCase()}</h1>
-			<span className="subtitle">SHOW NOW</span>
+			<span className="subtitle">SHOP NOW</span>
 		</div>
 	</div>
 );

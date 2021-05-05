@@ -10,6 +10,7 @@ import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
+
 import './header.styles.scss';
 
 const Header = ({ currentUser, hidden }) => (
@@ -19,18 +20,17 @@ const Header = ({ currentUser, hidden }) => (
 		</Link>
 		<div className="options">
 			<Link className="option" to="/shop">
-				Shop
+				SHOP
 			</Link>
 			<Link className="option" to="/shop">
-				Contact
+				CONTACT
 			</Link>
-
 			{currentUser ? (
 				<div className="option" onClick={() => auth.signOut()}>
 					SIGN OUT
 				</div>
 			) : (
-				<Link className="option" to="signin">
+				<Link className="option" to="/signin">
 					SIGN IN
 				</Link>
 			)}

@@ -36,7 +36,7 @@ class SignUp extends React.Component {
 				password
 			);
 
-			createUserProfileDocument(user, { displayName });
+			await createUserProfileDocument(user, { displayName });
 
 			// * if the code above succeeded reset the local state
 			this.setState({
@@ -61,7 +61,7 @@ class SignUp extends React.Component {
 		return (
 			<div className="sign-up">
 				<h2 className="title">I do not have a account</h2>
-				<span>Sign Up with email and password</span>
+				<span>Sign up with your email and password</span>
 				<form className="sign-up-form" onSubmit={this.handleSubmit}>
 					<FormInput
 						type="text"
@@ -69,6 +69,7 @@ class SignUp extends React.Component {
 						value={displayName}
 						onChange={this.handleChange}
 						label="Display Name"
+						required
 					/>
 					<FormInput
 						type="email"
@@ -76,6 +77,7 @@ class SignUp extends React.Component {
 						value={email}
 						onChange={this.handleChange}
 						label="Email"
+						required
 					/>
 					<FormInput
 						type="password"
@@ -83,6 +85,7 @@ class SignUp extends React.Component {
 						value={password}
 						onChange={this.handleChange}
 						label="Password"
+						required
 					/>
 					<FormInput
 						type="password"
@@ -90,6 +93,7 @@ class SignUp extends React.Component {
 						value={confirmPassword}
 						onChange={this.handleChange}
 						label="Confirm Password"
+						required
 					/>
 					<CustomButton type="submit">SIGN UP</CustomButton>
 				</form>

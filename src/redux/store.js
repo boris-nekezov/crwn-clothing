@@ -4,7 +4,7 @@ import logger from 'redux-logger';
 
 import rootReducer from './root-reducer';
 
-const middlewares = [];
+const middlewares = [logger];
 
 if (process.env.NODE_ENV === 'development') {
 	middlewares.push(logger);
@@ -15,6 +15,8 @@ export const store = createStore(rootReducer, applyMiddleware(...middlewares));
 // const store = createStore(rootReducer, applyMiddleware(logger));
 
 export const persistor = persistStore(store);
+
+export default { store, persistStore };
 
 // !this does not work instead I use export const ...
 // export default { store, persistor };
